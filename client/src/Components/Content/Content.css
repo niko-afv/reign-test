@@ -1,0 +1,15 @@
+.header{
+    background: #282c34;
+    color: #ffffff;
+    padding: 1.4em 0 4em;
+}
+
+.title{
+    margin-bottom: 10px;
+    font-size: 4em;
+}
+
+.subtitle{
+    margin: 0;
+    font-size: 1.5em;
+}
