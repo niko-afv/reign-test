@@ -13,7 +13,11 @@ mongoose.connect('mongodb://db:27017/reign-test-db')
         console.log("MongoDB Connected")
         app.listen(port, () => {
             console.log("server is running ( http://localhost:3800 )");
-            HNService.storeNews()
+            cron.schedule('0 * * * *', function () {
+                let date = new Date()
+                console.log(`Starting News Sync: ${date.toLocaleString()}`)
+                HNService.storeNews()
+            })
         });
     })
     .catch(err => console.log(`DB Error: ${err}`));
